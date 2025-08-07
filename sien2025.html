@@ -78,7 +78,20 @@
       <img src="IMAGE.jpg" alt="Workshop Illustration">
     </div>
   </div>
+
+  <div class="countdown-container">
+  <h4><i class="material-icons">hourglass_bottom</i> Countdown to Last Date for Submission</h4>
+  <div class="countdown-timer" id="countdown1">
+    <div class="time-box"><span id="days1">00</span><small>Days</small></div>
+    <div class="time-box"><span id="hours1">00</span><small>Hours</small></div>
+    <div class="time-box"><span id="minutes1">00</span><small>Minutes</small></div>
+    <div class="time-box"><span id="seconds1">00</span><small>Seconds</small></div>
+  </div>
+</div>
+
 </section>
+
+
 
   <!-- Target Audience -->
   <section class="glass">
@@ -188,6 +201,52 @@
   </div>
 </section>
 
+<!-- Paper Submission Details -->
+<section class="submission-details-section glass" id="submission-details-section">
+  <!-- Section Heading Bar -->
+  <div class="section-heading-bar">
+    <h2><i class="fas fa-file-alt"></i> Paper Submission Details</h2>
+  </div>
+
+  <!-- Topic Bars -->
+  <div class="submission-topic-grid">
+
+    <div class="submission-topic-bar">
+      <i class="fas fa-file-lines"></i>
+      <strong>Paper Length:</strong> 5–8 pages including references.
+    </div>
+
+    <div class="submission-topic-bar">
+      <i class="fas fa-user-secret"></i>
+      <strong>Review Process:</strong> Double-blind peer review.
+    </div>
+
+    <div class="submission-topic-bar">
+      <i class="fas fa-file-word"></i>
+      <strong>Format:</strong> Springer LNCS Template
+      <a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines" target="_blank" class="external-link">View Template</a>
+    </div>
+
+    <div class="submission-topic-bar">
+      <i class="fas fa-link"></i>
+      <strong>EDAS Link:</strong> 
+      <a href="https://edas.info/N34255" target="_blank" class="external-link">https://edas.info/N34255</a>
+    </div>
+
+  </div>
+
+  <!-- Note -->
+  <p class="submission-note">
+    <strong>Note:</strong> Only registered papers presented at the conference will appear in the Springer LNCS proceedings (indexed in Scopus, DBLP, Web of Science, and more).
+  </p>
+
+  <!-- Call to Action Button -->
+  <div class="submit-btn-container">
+    <a href="https://edas.info/N34255" target="_blank" class="submit-paper-btn">
+      <i class="fas fa-upload"></i> Submit Your Paper via EDAS
+    </a>
+  </div>
+</section>
 
 
 
@@ -203,12 +262,9 @@
       <i class="material-icons">event</i>
       <h4>Workshop Date</h4>
     </div>
-    <p class="format-date">12<sup>th</sup> November 2025</p>
+    <p class="format-date">10-12 November 2025(TBD)</p>
   </div>
 </section>
-
-
-
 
 
   <!-- Important Dates -->
@@ -265,25 +321,15 @@
     <!-- Countdown Timer -->
 <div class="countdown-container">
   <h4><i class="material-icons">hourglass_bottom</i> Countdown to Last Date for Submission</h4>
-  <div class="countdown-timer" id="countdown">
-    <div class="time-box"><span id="days">00</span><small>Days</small></div>
-    <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
-    <div class="time-box"><span id="minutes">00</span><small>Minutes</small></div>
-    <div class="time-box"><span id="seconds">00</span><small>Seconds</small></div>
+  <div class="countdown-timer" id="countdown2">
+    <div class="time-box"><span id="days2">00</span><small>Days</small></div>
+    <div class="time-box"><span id="hours2">00</span><small>Hours</small></div>
+    <div class="time-box"><span id="minutes2">00</span><small>Minutes</small></div>
+    <div class="time-box"><span id="seconds2">00</span><small>Seconds</small></div>
   </div>
 </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
 
  <section class="organizers-section" id="organizers-section">
   <div class="organizers-heading-bar">
@@ -342,40 +388,54 @@
 </section>
 
 <footer class="footer-bar">
-  <div class="footer-top">@SIEN2025</div>
-  <div class="footer-bottom">
-    <span>Developed by Mahesh Babu Chittem</span>
-    <a href="mailto:maheshbabuchittem09@gmail.com" target="_blank" aria-label="Email">
-      <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/mahesh-babu-chittem-40a779291/" target="_blank" aria-label="LinkedIn">
-      <i class="fab fa-linkedin"></i>
-    </a>
-  </div>
+  <div class="footer-top">@SIEM2025</div>
 </footer>
 
 <script>
-  // Set the date of the workshop
-  const workshopDate = new Date("August 30, 2025 12:59:59").getTime();
+  // Timer 1: Workshop submission deadline
+  const deadline1 = new Date("August 30, 2025 23:59:59").getTime();
 
-  const countdown = () => {
+  function updateCountdown1() {
     const now = new Date().getTime();
-    const distance = workshopDate - now;
+    const distance = deadline1 - now;
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("days").innerText = days < 10 ? '0' + days : days;
-    document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
-    document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
-    document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
-  };
+    document.getElementById("days1").innerText = days.toString().padStart(2, "0");
+    document.getElementById("hours1").innerText = hours.toString().padStart(2, "0");
+    document.getElementById("minutes1").innerText = minutes.toString().padStart(2, "0");
+    document.getElementById("seconds1").innerText = seconds.toString().padStart(2, "0");
+  }
 
-  countdown(); // Initial call
-  setInterval(countdown, 1000); // Update every second
+  // Timer 2: Important dates section (same deadline or different one if you want)
+  const deadline2 = new Date("August 30, 2025 23:59:59").getTime();
+
+  function updateCountdown2() {
+    const now = new Date().getTime();
+    const distance = deadline2 - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days2").innerText = days.toString().padStart(2, "0");
+    document.getElementById("hours2").innerText = hours.toString().padStart(2, "0");
+    document.getElementById("minutes2").innerText = minutes.toString().padStart(2, "0");
+    document.getElementById("seconds2").innerText = seconds.toString().padStart(2, "0");
+  }
+
+  updateCountdown1();
+  updateCountdown2();
+  setInterval(() => {
+    updateCountdown1();
+    updateCountdown2();
+  }, 1000);
 </script>
+
 
 
   <script src="script.js"></script>
